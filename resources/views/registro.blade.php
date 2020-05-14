@@ -5,7 +5,7 @@
 
 
     <!-- Title Page-->
-    <title>Login</title>
+    <title>Registro</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -15,7 +15,7 @@
 
 
     <!-- Main CSS-->
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/registro.css') }}">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
             <div class="card card-2">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h2 class="title">Iniciar Sesi&#243;n</h2>
+                    <h2 class="title">Registro</h2>
                     <form method="POST">
 
                         <div class="row row-space">
@@ -40,11 +40,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="registro">
-                        Si no tienes cuenta, haz click en <a href="resources/views/registro.blade.php">Registrar</a>
+
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-2" type="text" placeholder="N&#250mero de documento" name="Numero de documento">
+                                </div>
+                            </div>
                         </div>
+
                         <div class="p-t-30">
-                            <button class="btn btn--radius" type="submit">Ingresar</button>
+                            <button class="btn btn--radius" type="submit">Registrarse</button>
                         </div>
 
                     </form>
