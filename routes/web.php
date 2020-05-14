@@ -14,5 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Citas.menuCitas');
+    return view('login');
+});
+
+
+/* CITAS */
+Route::prefix('citas')->group(function(){
+	Route::	get('/','CitasController@index')->name('citasIndex');
+	Route::	get('/crear','CitasController@crearCita')->name('crearCita');
+	Route::	get('/ver','CitasController@verCita')->name('verCita');
+	Route::	get('/borrar','CitasController@borrarCita')->name('borrarCita');
 });

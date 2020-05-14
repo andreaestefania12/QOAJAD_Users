@@ -28,7 +28,7 @@
                             <input class="m-b-md" type="password" name="login" placeholder="Contraseña">
                         </div>
                         <div>
-                            <button id="boton">Entrar</button>
+                            <a id="boton" href="{{ route('citasIndex') }}">Entrar</a>
                         </div>
                     </div>
                     

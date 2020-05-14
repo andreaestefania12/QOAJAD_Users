@@ -3,15 +3,15 @@
 @section('content')
 	<div id="menuCitas">
 		<div id="verCitas">
-    		VER CITAS
+			<a href="{{ route('verCita') }}">VER CITAS</a>     		
 	    </div>
 
-	    <div id="crearCitas">
-	    	CREAR CITA
+	    <div id="crearCitas" >
+	    	<a href="{{ route('crearCita') }}">CREAR CITA</a> 
 	    </div>
 
 	    <div id="borrarCitas">
-	    	<p>BORRAR CITAS</p>
+	    	<a href="{{ route('borrarCita') }}">BORRAR CITA</a> 
 	    </div>
 	</div>
     
