@@ -25,6 +25,18 @@ class CitasController extends Controller
     	return view('Citas.crearCita', compact('ipslist'));
     }
 
+    public function ipsCita($name)
+    {
+        $client = new Client([
+            'base_uri' => 'http://thawing-stream-48846.herokuapp.com'
+        ]);
+
+        $response = $client->request('GET',"ips/{$name}");
+
+        $espelist = json_decode($response->getBody()->getContents());
+
+        return view('Citas.ipsCita', compact('espelist'));
+    }
 
 
     public function verCita()

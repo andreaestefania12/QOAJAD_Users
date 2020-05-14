@@ -22,6 +22,7 @@ Route::get('/', function () {
 Route::prefix('citas')->group(function(){
 	Route::	get('/','CitasController@index')->name('citasIndex');
 	Route::	get('/crear','CitasController@crearCita')->name('crearCita');
+	Route::	get('/crear/{name}','CitasController@ipsCita')->name('ipsCita');	
 	Route::	get('/ver','CitasController@verCita')->name('verCita');
 	Route::	get('/borrar','CitasController@borrarCita')->name('borrarCita');
 });
