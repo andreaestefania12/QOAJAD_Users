@@ -13,8 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
-    return view('Citas.menuCitas');
+    return view('Login');
+});
+
+
+Route::get('resources/views/registro.blade.php', function() {
+	return view('registro');
+});
+
+Route::get('resources/views/login.blade.php', function() {
+	return view('Login');
 });
 
 Route::get('/name/{name}/lastname/{lastname?}', function($name, $lastname = NULL){
