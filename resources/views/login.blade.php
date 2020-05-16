@@ -22,18 +22,18 @@
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Iniciar Sesión</h2>
-                    <form method="POST">
+                    <form action ="{{ action('LoginController@index')}}" method="get">
 
                         <div class="row row-space">
                             <div class="input-group">
-                                <input class="input--style-2" type="text" placeholder="Usuario" name="Usuario">
+                                <input class="input--style-2" type="text" placeholder="Usuario" name="user">
                             </div>
                         </div>
 
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                     <input class="input--style-2" type="password" placeholder="Contraseña" name="Contraseña">
+                                     <input class="input--style-2" type="password" placeholder="Contraseña" name="passw">
                                 </div>
                             </div>
                         </div>
@@ -41,8 +41,9 @@
                         Si no tienes cuenta, haz click en <a href="{{ route('registro') }}">Registrar</a>
                         </div>
                         <div class="p-t-30">
-                            <button class="btn btn--radius" type="submit"><a id="ingresar" href="{{ route('citasIndex') }}">Ingresar</a></button>
+                            <button class="btn btn--radius" type="submit"><a id="ingresar" href="#">Ingresar</a></button>
                         </div>
+                        <p><input type="submit" name="submit" value ="Registrar"></p>
 
                     </form>
                 </div>

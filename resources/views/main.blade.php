@@ -22,9 +22,9 @@
                     <li><a href="#">Inicio</a></li>
                     <li><a href="{{ route('citasIndex') }}">Citas</a>
                         <ul>
-                            <li><a href="#">Crear cita</a></li>
-                            <li><a href="#">Ver citas</a></li>
-                            <li><a href="#">Modificar citas</a></li>
+                            <li><a href="{{ route('crearCita') }}">Crear cita</a></li>
+                            <li><a href="{{ route('verCita') }}">Ver citas</a></li>
+                            <li><a href="{{ route('borrarCita') }}">Modificar o borrar cita</a></li>
                         </ul>           
                     </li>
 

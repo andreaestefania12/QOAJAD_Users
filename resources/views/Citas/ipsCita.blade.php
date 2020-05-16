@@ -1,12 +1,25 @@
 @extends('main')
 
 @section('content')
-	<a> CREAR CITA</a>
-	<h4>Eliga una especialización</h4>
 
-	@foreach ($espelist as $esp)
-		<div >{{ $esp->name }}</div>
-		<div> Especialidades {{ $esp->specialties }}</div>
-		
-	@endforeach
+<div id="boxCrear">
+	<div id="title">
+		Eliga una especialización
+	</div>
+	<div id="content">
+		@foreach ($espelist as $esp)
+			<div class="boxIPS">
+			<div> {{ $esp->name }}</div>
+				@foreach($esp->specialties as $spe)
+					<a href="{{ route('espCita',[$ips,$spe->name]) }}">
+						<div> Especialidades {{ $spe->name }}</div>
+					</a>
+				@endforeach
+			</div>			
+			
+		@endforeach
+	</div>
+	
+</div>
+
 @endsection

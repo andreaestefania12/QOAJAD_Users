@@ -1,12 +1,23 @@
 @extends('main')
 
 @section('content')
-	<a> CREAR CITA</a>
-
-	@foreach ($ipslist as $ips)
-		<div>{{ $ips->name }}</div>
-		<div> Dirección {{ $ips->streetAddress }}</div>
+	<div id="boxCrear">
+		<div id="title">
+			Elegir una ips
+		</div>
+		<div id="content">
+			@foreach ($ipslist as $ips)
+				<a href="{{ route('ipsCita',$ips->name) }}">
+					<div class="boxIPS">
+						<div> Nombre: {{ $ips->name }}</div>
+						<div> Dirección: {{ $ips->streetAddress }}</div>
+					</div>
+				</a>
+				
+			@endforeach
+		</div>
 		
-	@endforeach
+	</div>
+	
     
 @endsection

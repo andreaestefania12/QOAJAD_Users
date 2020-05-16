@@ -12,14 +12,15 @@
 	line-height: 75px;
 	font-size: 20px;
 	display: flex;
-	flex-direction: column;	
-	display: 	flex;	
+	flex-direction: column;		
 	justify-content: 	center;	
-	align-items: 	center;
+	text-align: center;
 	color: #2a6496;
     border-radius: 50%;
     border: 2px solid #2a6496;
     cursor: pointer;
+    overflow: hidden;
+    background-color: #f7f7f7;
     
 }
 
@@ -40,15 +41,55 @@ button{
 
 #verCitas{
 	
-	background-color: #f7f7f7;
 }
 
 #crearCitas{
-	background-color: #f7f7f7;
 }
 
 #borrarCitas{
+}
+
+
+/*PÁGINA CREAR CITA*/
+#boxCrear{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+#title{
+	color: white;
+	font-size: 60px;	
+	text-align: center;
+}
+
+
+#content{
+	display: flex;	
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	margin-left: 90px;
+
+}
+.boxIPS{
 	background-color: #f7f7f7;
+	width: 200px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;	
+    border: 2px solid #2a6496;
+    color: #2a6496;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 10px;
+}
+
+
+.boxIPS:hover{
+	background-color: #2a6496;
+	color: white;
 }
 
 

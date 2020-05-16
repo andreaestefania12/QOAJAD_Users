@@ -25,17 +25,31 @@ class CitasController extends Controller
     	return view('Citas.crearCita', compact('ipslist'));
     }
 
-    public function ipsCita($name)
+    public function ipsCita($ips)
     {
         $client = new Client([
             'base_uri' => 'http://thawing-stream-48846.herokuapp.com'
         ]);
 
-        $response = $client->request('GET',"ips/{$name}");
+        $response = $client->request('GET',"ips/{$ips}");
 
-        $espelist = json_decode($response->getBody()->getContents());
+        $espelist = json_decode($response->getBody());
+        
 
-        return view('Citas.ipsCita', compact('espelist'));
+        return view('Citas.ipsCita', compact('espelist','ips'));
+    }
+
+    public function espCita($ips, $esp)
+    {
+        $client = new Client([
+            'base_uri' => 'http://thawing-stream-48846.herokuapp.com'
+        ]);
+
+        $response = $client->request('GET',"horarios/{$ips}/{$esp}");
+
+        $horarios = json_decode($response->getBody());
+
+        return view('Citas.espCita', compact('horarios'));
     }
 
 

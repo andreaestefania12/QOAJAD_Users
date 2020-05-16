@@ -22,13 +22,21 @@ Route::get('/', function () {
 Route::prefix('registro')->group(function(){
 	Route::	get('/','RegistroController@index')->name('registro');
 });
+
 /* CITAS */
 Route::prefix('citas')->group(function(){
-	Route::	get('/','CitasController@index')->name('citasIndex');
-	Route::	get('/crear','CitasController@crearCita')->name('crearCita');
-	Route::	get('/crear/{name}','CitasController@ipsCita')->name('ipsCita');	
+	Route::	get('/menu','CitasController@index')->name('citasIndex');
+	Route::	get('/','CitasController@crearCita')->name('crearCita');
+	Route::	get('/{ips}','CitasController@ipsCita')->name('ipsCita');
+	Route::	get('/{ips}/{esp}','CitasController@espCita')->name('espCita');	
 	Route::	get('/ver','CitasController@verCita')->name('verCita');
 	Route::	get('/borrar','CitasController@borrarCita')->name('borrarCita');
+});
+
+/* LOGIN */
+
+Route::prefix('login')->group(function(){
+	Route::	get('/','LoginController@index')->name('login');
 });
 
 
