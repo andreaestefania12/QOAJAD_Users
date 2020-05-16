@@ -13,12 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::get('/', function () {
-
+    return view('login');
 });
 
+/* REGISTRO */
 
+Route::prefix('registro')->group(function(){
+	Route::	get('/','RegistroController@index')->name('registro');
+});
 /* CITAS */
 Route::prefix('citas')->group(function(){
 	Route::	get('/','CitasController@index')->name('citasIndex');
@@ -27,3 +30,5 @@ Route::prefix('citas')->group(function(){
 	Route::	get('/ver','CitasController@verCita')->name('verCita');
 	Route::	get('/borrar','CitasController@borrarCita')->name('borrarCita');
 });
+
+

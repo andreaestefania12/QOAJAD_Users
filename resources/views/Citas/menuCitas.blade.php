@@ -1,18 +1,25 @@
 @extends('main')
 
 @section('content')
-	<div id="menuCitas">
-		<div id="verCitas">
-			<a href="{{ route('verCita') }}">VER CITAS</a>     		
-	    </div>
+	<div id="maincontent">
+		<a href="{{ route('verCita') }}">  
+			<div class="box" id="verCitas">
+				VER CITAS 						
+		    </div>
+	    </a> 
 
-	    <div id="crearCitas" >
-	    	<a href="{{ route('crearCita') }}">CREAR CITA</a> 
-	    </div>
+	    <a href="{{ route('crearCita') }}">
+		    <div class="box" id="crearCitas" >
+		    	CREAR CITAS 
+		    </div>
+	    </a>
 
-	    <div id="borrarCitas">
-	    	<a href="{{ route('borrarCita') }}">BORRAR CITA</a> 
-	    </div>
+	    <a href="{{ route('borrarCita') }}">
+		    <div class="box" id="borrarCitas">
+		    	BORRAR CITAS 
+				
+		    </div>
+	    </a>
 	</div>
     
 @endsection

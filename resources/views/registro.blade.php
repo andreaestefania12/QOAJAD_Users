@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-
+    <head>
+         <!-- Title Page-->
     <!-- Title Page-->
     <title>Registro</title>
 
@@ -36,7 +34,7 @@
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                     <input class="input--style-2" type="password" placeholder="Contrase&ntilde;a" name="Contraseña">
+                                     <input class="input--style-2" type="password" placeholder="Contraseña" name="Contraseña">
                                 </div>
                             </div>
                         </div>
@@ -44,7 +42,7 @@
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <input class="input--style-2" type="text" placeholder="N&#250mero de documento" name="Numero de documento">
+                                    <input class="input--style-2" type="text" placeholder="Número de documento" name="Numero de documento">
                                 </div>
                             </div>
                         </div>
@@ -58,8 +56,6 @@
             </div>
         </div>
     </div>
-
-
-</body>
+    </body>
 
 </html>

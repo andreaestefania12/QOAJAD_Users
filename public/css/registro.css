@@ -294,7 +294,7 @@ input {
 }
 
 .card-2 .card-heading {
-  background: url("registimg.jpg") top left/cover no-repeat;
+  background: url("images/registimg.jpg") top left/cover no-repeat;
   width: 50.1%;
   display: table-cell;
 }

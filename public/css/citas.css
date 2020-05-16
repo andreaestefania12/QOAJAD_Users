@@ -1,28 +1,54 @@
-#menuCitas{
+#maincontent{
 	display: flex;
-	justify-content: flex-start;
+	width: : 100%;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 12px;
 }
 
-#menuCitas div{
-	width: 250px;	
-	height: 250px;
+.box{
+	width: 200px;	
+	height: 200px;
 	line-height: 75px;
-	font-size: 30px;
+	font-size: 20px;
+	display: flex;
+	flex-direction: column;	
 	display: 	flex;	
 	justify-content: 	center;	
 	align-items: 	center;
+	color: #2a6496;
+    border-radius: 50%;
+    border: 2px solid #2a6496;
+    cursor: pointer;
+    
+}
+
+.box:hover {
+	box-shadow: 0 20px 10px #2a6496;
+}
+
+ a{
+	color: white;
+	text-decoration: none;
+
+}
+
+button{
+	background-color: #4a8eff;
+	color: white;
 }
 
 #verCitas{
-	background-color: #B5DCCD;
+	
+	background-color: #f7f7f7;
 }
 
 #crearCitas{
-	background-color: #BFFFC1;
+	background-color: #f7f7f7;
 }
 
 #borrarCitas{
-	background-color: #FFFF9F;
+	background-color: #f7f7f7;
 }
 
 

@@ -297,7 +297,7 @@ input {
 }
 
 .card-2 .card-heading {
-  background: url("loginImg.jpg") top left/cover no-repeat;
+  background: url("images/loginImg.jpg") top left/cover no-repeat;
   width: 50.1%;
   display: table-cell;
 }
@@ -327,4 +327,13 @@ input {
 
 .registro{
   font-size: 11.5px;
+}
+.registro a{
+  color: blue;
+}
+
+
+#ingresar{
+  color: white;
+  text-decoration: none;
 }

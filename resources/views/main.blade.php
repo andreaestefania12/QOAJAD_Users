@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>QOAJAD</title>
-
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -21,7 +20,7 @@
             <header>
                 <ul>         
                     <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Citas</a>
+                    <li><a href="{{ route('citasIndex') }}">Citas</a>
                         <ul>
                             <li><a href="#">Crear cita</a></li>
                             <li><a href="#">Ver citas</a></li>
@@ -35,7 +34,9 @@
 
             <!--- MENÚ LATERAL -->
             <nav>
-                <h1>QOAJAD</h1>
+                <div id="logo">
+                    <div></div>
+                </div> 
                 <div>LOGO</div>
                 <div>Nombre</div>
                 <div>Configuración</div>
@@ -75,9 +76,10 @@
 
             <!--- CONTENIDO PRINCIPAL -->
 
-            <main>
+            <main id="main">
                 @yield('content')
             </main>
+
         </section>
     </body>
 
