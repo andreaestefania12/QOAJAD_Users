@@ -41,9 +41,9 @@
                         Si no tienes cuenta, haz click en <a href="{{ route('registro') }}">Registrar</a>
                         </div>
                         <div class="p-t-30">
-                            <button class="btn btn--radius" type="submit"><a id="ingresar" href="#">Ingresar</a></button>
+                            
                         </div>
-                        <p><input type="submit" name="submit" value ="Registrar"></p>
+                        <p><input type="submit" name="submit" value ="PRUEBA AUTENTI"></p>
 
                     </form>
                 </div>

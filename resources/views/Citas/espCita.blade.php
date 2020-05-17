@@ -12,7 +12,7 @@
 			<div> {{ $hora->name }}</div>
 				@foreach($hora->availableAppointment as $ava)
 				<div class="boxIPS">
-					<a href="#">
+					<a href="">
 						<div> Doctor: {{ $ava->doctorName }}</div>
 						<div> Documento: {{ $ava->doctorDocument }}</div>
 						<div> Fecha y hora: {{ $ava->date }}</div>				
