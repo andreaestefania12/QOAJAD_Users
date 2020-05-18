@@ -27,10 +27,10 @@ Route::prefix('registro')->group(function(){
 Route::prefix('citas')->group(function(){
 	Route::	get('/menu','CitasController@index')->name('citasIndex');
 	Route::	get('/','CitasController@crearCita')->name('crearCita');
-	Route::	get('/{ips}','CitasController@ipsCita')->name('ipsCita');
-	Route::	get('/{ips}/{esp}','CitasController@espCita')->name('espCita');	
 	Route::	get('/ver','CitasController@verCita')->name('verCita');
 	Route::	get('/borrar','CitasController@borrarCita')->name('borrarCita');
+	Route::	get('/{ips}','CitasController@ipsCita')->name('ipsCita');
+	Route::	get('/{ips}/{esp}','CitasController@espCita')->name('espCita');	
 });
 
 /* LOGIN */
@@ -39,4 +39,8 @@ Route::prefix('login')->group(function(){
 	Route::	get('/','LoginController@index')->name('login');
 });
 
+/* USUARIO */
 
+Route::prefix('usuario')->group(function(){
+	Route::	get('/','UsuarioController@index')->name('perfil');
+});
