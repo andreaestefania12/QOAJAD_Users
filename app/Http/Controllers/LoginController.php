@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 
+
+
 class LoginController extends Controller
 {
     public function index(Request $request)
@@ -21,8 +23,12 @@ class LoginController extends Controller
         $response = $client->request('GET',"{$user}/{$passw}");
         
 
-        $jwt = $response->getBody()->getContents();
-        return view('temp')->with('jwt',$jwt);
+        $jwtComple =$response->getBody()->getContents();
+        $jwt = substr($jwtComple, 15); 
+
+        $cookie= cookie('authentication',$jwt,1);
+
+        return view('temp')->with('cookie',$cookie);
         
     }
 }
