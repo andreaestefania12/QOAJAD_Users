@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 /* Inicio */
 
 Route::get('/', function () {
-    return view('main');
+    return view('login');
 });
 
 /* REGISTRO */
