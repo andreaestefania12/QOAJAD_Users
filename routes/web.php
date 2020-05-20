@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('main');
+    return view('login');
 });
 
 Route::prefix('/inicio')->group(function(){

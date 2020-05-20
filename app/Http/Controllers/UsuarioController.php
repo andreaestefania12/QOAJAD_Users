@@ -22,9 +22,14 @@ class UsuarioController extends Controller
     	$user = $this->getUsuario();
     	return view('Usuario.perfil',compact('user'));
     }
+    
     public function Usuario()
     {
-    	$user = $this->getUsuario();
+        $client = (new ApiController())->getClient();
+        $jwt =  (new ApiController())->getCookie();
+    	$user = $client->request('GET',"user/find",['headers' => ['authentication' => $jwt]]);
+        $user = json_decode($user->getbody());
+        
     	return view('Usuario.correo',compact('user'));
     }
 

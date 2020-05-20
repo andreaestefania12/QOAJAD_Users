@@ -11,7 +11,9 @@
 		<div>Telefono: {{$user->telefono}} </div>
 		<div>Sexo: {{$user->sexo}} </div>
 
-		<div>Elige el elemento que desee modificar</div>
+
+
+		<h2>Elige el elemento que desee modificar</h2>
 		<div id="maincontent">
 			<a href="{{ route('usuario') }}">
 			    <div class="box" id="crearCitas" >
