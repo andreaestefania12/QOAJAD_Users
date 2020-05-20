@@ -13,7 +13,9 @@
         <link rel="stylesheet" href="{{ asset('css/citas.css') }}">
     </head>
 
-    <body>         
+    <body>        
+
+ 
         <section id="HomePage">
 
             <!--- MENÚ DE ARRIBA --->
