@@ -24,7 +24,11 @@ class UsuarioController extends Controller
     }
     public function Usuario()
     {
-    	$user = $this->getUsuario();
+        $client = (new ApiController())->getClient();
+        $jwt =  (new ApiController())->getCookie();
+    	$user = $client->request('GET',"user/find",['headers' => ['authentication' => $jwt]]);
+        $user = json_decode($user->getbody());
+        
     	return view('Usuario.correo',compact('user'));
     }
 
@@ -66,6 +70,6 @@ class UsuarioController extends Controller
         ]); 
         $response = $client->request('PUT','',['body' => $json]);
 
-    	//return view('Usuario.correo',compact('user'));
+    	return view('Usuario.correo',compact('user'));
     }
 }

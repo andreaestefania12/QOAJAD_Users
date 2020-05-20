@@ -17,6 +17,12 @@ class LoginController extends Controller
             return view('inicio');
         }
 
+
+    public function cerrar()
+    {
+        $cookie = Cookie::forget('authentication');
+        return view('login');   
+    }
     public function index(Request $request)
     {
         try {
@@ -50,9 +56,8 @@ class LoginController extends Controller
         $request->session()->put('usuario',"{$usuario}");
 
         return redirect()->route('inicio');
-        } catch (ClientErrorResponseException  $e) {
-            $responseBody = $e->getResponse()->getBody(true);
-            dd($responseBody);
+        } catch (Exception  $e) {
+            return redirect()->route('cerrar');
         }
     	
 

@@ -69,19 +69,21 @@ class CitasController extends Controller
             'headers' => ['authentication' => $jwt , 'Content-Type' => 'application/json']
         ]); 
         $response = $client->request('POST','',['body' => $json]); 
+       
     }
 
 
 
     public function verCita()
     {
+
         $client = (new ApiController())->getClient();
         $jwt =  (new ApiController())->getCookie();
-        $userDocument = ((new UsuarioController())->getUsuario());
-        dd($userDocument);
-        $response = $client->request('GET',"/appointment/all_user_appointments/{$userDocument}",['headers' => ['authentication' => $jwt]]);        
-
-    	return view('Citas.verCita');
+        $userDocument = ((new UsuarioController())->getUsuario())->identificacion;
+        $response = $client->request('GET',"/appointment/all_user_appointments/{$userDocument}",['headers' => ['authentication' => $jwt]]);
+              
+        $lista=json_decode($response->getBody()); 
+    	return view('Citas.verCita',compact('lista'));
     }
 
     public function borrarCita()

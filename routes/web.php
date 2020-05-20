@@ -14,11 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('main');
+    return view('login');
 });
 
 Route::prefix('/inicio')->group(function(){
-    Route::	get('/','LoginController@inicio')->name('inicio');
+    Route::	get('/pag','LoginController@inicio')->name('inicio');
+    Route::	get('/','LoginController@cerrar')->name('cerrar');
 });
 
 /* REGISTRO */
@@ -40,9 +41,6 @@ Route::prefix('citas')->group(function(){
 });
 
 
-
-
-
 Route::prefix('guardar')->group(function(){
 	Route::	get('/{doctorDocument}/{date}','CitasController@guardarCita')->name('guardar');
 });
@@ -58,9 +56,9 @@ Route::prefix('login')->group(function(){
 Route::prefix('usuario')->group(function(){
 Route::	get('/','UsuarioController@index')->name('perfil');
 Route::	get('/correo','UsuarioController@Usuario')->name('usuario');
-Route::	get('/s','UsuarioController@setUsuario')->name('setUsuario');
+Route::	get('/correoNuevo','UsuarioController@setUsuario')->name('setUsuario');
 Route::	get('/contraseña','UsuarioController@Contra')->name('contra');
-Route::	get('/ss','UsuarioController@setContr')->name('setContr');
+Route::	get('/contraseñaNueva','UsuarioController@setContr')->name('setContr');
 });
 
 /* HISTORIA */ 

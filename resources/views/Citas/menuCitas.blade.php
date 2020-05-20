@@ -14,10 +14,9 @@
 		    </div>
 	    </a>
 
-	    <a href="{{ route('borrarCita') }}">
+	    <a href="{{ route('verCita') }}">
 		    <div class="box" id="borrarCitas">
 		    	MODIFICAR O BORRAR CITAS 
-				
 		    </div>
 	    </a>
 	</div>

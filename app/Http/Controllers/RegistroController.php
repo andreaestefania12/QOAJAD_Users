@@ -32,9 +32,9 @@ class RegistroController extends Controller
     $responseBodyAsString = json_decode($response->getBody()->getContents());
     	if($responseBodyAsString->status == 500)
     	{
-    		dd($responseBodyAsString);
+    		return redirect()->route('registro')->with('alert','fallo');
     	}
-    	dd($responseBodyAsString->status);
+    	return '<script type="text/javascript">alert("no fallo!");</script>';
     	}
     	
     	

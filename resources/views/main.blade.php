@@ -85,6 +85,10 @@
                 <a href="{{ route('perfil') }}">  
                     <div>Configuración</div>
                 </a>
+
+                <a href="{{ route('cerrar') }}">  
+                    <div>Cerrar sesión</div>
+                </a>
                 
 
                 <!--- CALENDARIO -->
