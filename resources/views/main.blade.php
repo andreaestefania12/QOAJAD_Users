@@ -30,7 +30,7 @@
                         </ul>           
                     </li>
 
-                    <li><a href="#">Historia</a></li>    
+                    <li><a href="{{route('historia')}}">Historia</a></li>    
                 </ul>
             </header>
 

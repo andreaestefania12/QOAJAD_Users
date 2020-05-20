@@ -40,11 +40,19 @@ Route::prefix('login')->group(function(){
 });
 
 /* USUARIO */
-
-
-/* PDF */
-Route::get('/pdf', 'PDFController@PDF')->name('downloadPDF');
 Route::prefix('usuario')->group(function(){
 	Route::	get('/','UsuarioController@index')->name('perfil');
 });
+
+/* PDF */
+Route::get('/pdf', 'PDFController@PDF')->name('downloadPDF');
+
+
+
+
+/* HISTORIA */ 
+
+Route::get('/historia', function(){ 
+	return view('historiaClinica');
+})-> name('historia');
 
