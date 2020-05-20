@@ -42,6 +42,10 @@ Route::prefix('login')->group(function(){
 /* USUARIO */
 Route::prefix('usuario')->group(function(){
 	Route::	get('/','UsuarioController@index')->name('perfil');
+	Route::	get('/correo','UsuarioController@Usuario')->name('usuario');
+	Route::	get('/s','UsuarioController@setUsuario')->name('setUsuario');
+	Route::	get('/contraseña','UsuarioController@Contra')->name('contra');
+	Route::	get('/ss','UsuarioController@setContr')->name('setContr');
 });
 
 /* PDF */
