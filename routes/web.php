@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('main');
 });
 
 Route::prefix('/inicio')->group(function(){
@@ -35,7 +35,9 @@ Route::prefix('citas')->group(function(){
 	Route::	get('/ver','CitasController@verCita')->name('verCita');
 	Route::	get('/borrar','CitasController@borrarCita')->name('borrarCita');
 	Route::	get('/{ips}','CitasController@ipsCita')->name('ipsCita');
-	Route::	get('/{ips}/{esp}','CitasController@espCita')->name('espCita');	});
+	Route::	get('/{ips}/{esp}','CitasController@espCita')->name('espCita');	
+});
+
 
 
 
@@ -47,14 +49,12 @@ Route::prefix('guardar')->group(function(){
 
 Route::prefix('login')->group(function(){
 	Route::	get('/','LoginController@index')->name('login');
+
+});
+
 });
 
 //* USUARIO */
-
-
-/* PDF */
-
-
 
 Route::prefix('usuario')->group(function(){
 Route::	get('/','UsuarioController@index')->name('perfil');
@@ -64,12 +64,9 @@ Route::	get('/contraseña','UsuarioController@Contra')->name('contra');
 Route::	get('/ss','UsuarioController@setContr')->name('setContr');
 });
 
-
-
 /* HISTORIA */ 
 
 Route::prefix('/historia')->group(function(){ 
 	Route::get('/', 'PDFController@getHistoria')->name('historia');
 	Route::get('/pdf', 'PDFController@PDF')->name('downloadPDF');
 });
-

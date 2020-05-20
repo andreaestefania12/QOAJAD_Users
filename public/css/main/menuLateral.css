@@ -1,0 +1,44 @@
+/*Barra lateral*/
+
+#HomePage>nav {
+    grid-area: nav;
+    background-color: #1b3f7d;
+    position: fixed;
+}
+
+#logo {
+    width: 120px;
+    height: 120px;
+}
+
+#logo div {
+    background: url("/css/images/circle_logo.png") top left/cover no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    /* se modificó aquí para que los elementos no se separan a lo loco*/
+    height: 100%;
+}
+
+nav h1 {
+    color: #fff;
+}
+
+nav h2 {
+    color: white;
+}
+
+nav div {
+    color: #fff;
+}
+
+#datepicker.hasDatepicker {
+    top: 100%;
+}
