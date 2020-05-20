@@ -64,7 +64,7 @@
 
                 
 
-                    <li><a href="{{ route('inicio') }}">Inicio</a></li>
+                    <li> <a href="{{ route('inicio') }}">Inicio</a></li>
                     <li><a href="{{ route('citasIndex') }}">Citas</a>
 
                         <ul>
