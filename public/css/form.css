@@ -1,0 +1,40 @@
+form {
+    margin-top: 5%;
+    padding: 0px;
+    left: 600px;
+    text-align: center;
+}
+
+form input[type="submit"] {
+    width: 30%;
+    padding: 8px 16px;
+    /* margin-top: 32px; */
+    border: 1px solid #000;
+    border-radius: 5px;
+    /* display: block; */
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+    left: 70%;
+}
+
+form input[type="text"],
+form input[type="email"] {
+    width: 160px;
+    padding: 3px 10px;
+    border: 1px solid #f6f6f6;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    margin: 8px 0;
+    display: inline-block;
+}
+
+#contra {
+    width: 180px;
+    padding: 8px 16px;
+    border: 1px solid #f6f6f6;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    margin: 8px 0;
+    display: inline-block;
+}

@@ -8,12 +8,16 @@
 			Cambiar correo 
 		</div>
 
-		<form  id= "Form" action ="{{ action('UsuarioController@setUsuario')}}" method="put">
+		<form   action ="{{ action('UsuarioController@setUsuario')}}" method="put">
+			<section id= "Form"> 
+				
+				<h1>Correo actual : {{$user->username}}</h1>
+				<h1>Ingrese el nuevo correo: 
+				<input type="email" name="email" id="email" placeholder="Correo electrónico" required></h1>
+				<input type="submit" name="enviar" value="Confirmar"/>
 
-			<div>Correo actual : {{$user->username}}</div>
-			<div>Ingrese el nuevo correo: 
-			<input type="text" name="username" placeholder="Correo electrónico"></div>
-			<p><input type="submit" name="submit" value ="Confirmar"></p>
+			</section>
+		
 
 		</form>		
 	

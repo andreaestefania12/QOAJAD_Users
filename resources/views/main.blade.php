@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="{{ asset('css/main/menu.css') }}">
         <!-- PERFIL CSS-->
         <link rel="stylesheet" href="{{ asset('css/perfil.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/form.css') }}">
 
 
         <!-- Evento cita calendario -->
