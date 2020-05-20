@@ -12,6 +12,10 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <link rel="stylesheet" href="{{ asset('css/citas.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/main/contenido.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/main/menuLateral.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/main/menu.css') }}">
+
 
         <!-- Evento cita calendario -->
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
@@ -50,7 +54,7 @@
              <div class="bloque"></div>
             <header>
                 <ul>         
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href="{{ route('citasIndex') }}">Inicio</a></li>
                     <li><a href="{{ route('citasIndex') }}">Citas</a>
                         <ul>
                             <li><a href="{{ route('crearCita') }}">Crear cita</a></li>
