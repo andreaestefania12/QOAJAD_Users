@@ -6,18 +6,19 @@
 
 
 <div>
-	<div id="boxCrear">
+	<div class="boxCrear">
 		<div id="title">
 			Bienvenido {{$user->nombrePaciente}}  
 		</div>
 	</div>
+
 	<section id="Info">
-		<div>Estado civil : {{$user->estadoCivil}}</div>
-		<div>Telefono: {{$user->telefono}} </div>
-		<div>Sexo: {{$user->sexo}} </div>
+		<p>Estado civil : {{$user->estadoCivil}}</p>
+		<p>Telefono: {{$user->telefono}} </p>
+		<p>Sexo: {{$user->sexo}} </p>
 	</section>
 	
-	<h2>Elige el elemento que desee modificar</h2>
+	<h2 id="Mensaje">Elige el elemento que desee modificar</h2>
 	
 	<div id="maincontent">
 		<a href="{{ route('usuario') }}">

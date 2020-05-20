@@ -27,3 +27,18 @@ body {
 div.ui-datepicker-title {
     color: black;
 }
+
+i {
+    margin: 0%;
+    padding: 0%;
+    font-size: 80px;
+}
+
+a {
+    margin: 0%;
+    padding: 0%;
+}
+
+#form {
+    text-align: center;
+}

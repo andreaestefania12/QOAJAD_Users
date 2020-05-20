@@ -1,9 +1,16 @@
-h2 {
+#Mensaje {
     color: gray;
+    left: 30%;
+    text-align: center;
 }
 
-#boxCrear {
-    margin: 0px;
+#Info {
+    margin-top: 5%;
     padding: 0px;
     left: 600px;
+    text-align: center;
+}
+
+p {
+    margin: 0px;
 }

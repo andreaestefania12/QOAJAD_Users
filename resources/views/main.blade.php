@@ -87,7 +87,7 @@
 
                 <h1>EPS VALLEDEV</h1>
                 <a href="{{ route('perfil') }}">  
-                    <div>Configuración</div>
+                <i class="fas fa-user-cog"></i>
                 </a>
                 
 
