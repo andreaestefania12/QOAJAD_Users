@@ -23,6 +23,7 @@ Route::prefix('registro')->group(function(){
 	Route::	get('/','RegistroController@index')->name('registro');
 });
 
+
 /* CITAS */
 Route::prefix('citas')->group(function(){
 	Route::	get('/menu','CitasController@index')->name('citasIndex');
@@ -30,41 +31,39 @@ Route::prefix('citas')->group(function(){
 	Route::	get('/ver','CitasController@verCita')->name('verCita');
 	Route::	get('/borrar','CitasController@borrarCita')->name('borrarCita');
 	Route::	get('/{ips}','CitasController@ipsCita')->name('ipsCita');
-	Route::	get('/{ips}/{esp}','CitasController@espCita')->name('espCita');	
-});
+	Route::	get('/{ips}/{esp}','CitasController@espCita')->name('espCita');	});
 
+
+Route::prefix('guardar')->group(function(){
+	Route::	get('/{doctorDocument}/{date}','CitasController@guardarCita')->name('guardar');
+});
 /* LOGIN */
 
 Route::prefix('login')->group(function(){
 	Route::	get('/','LoginController@index')->name('login');
 });
 
-// /* USUARIO */
-// <<<<<<< HEAD
+//* USUARIO */
 
 
-// /* PDF */
-// Route::get('/pdf', 'PDFController@PDF')->name('downloadPDF');
-
-// =======
-// >>>>>>> d3b521c2d3df0670b5f670eea32a257f1cd91ba2
-// Route::prefix('usuario')->group(function(){
-// 	Route::	get('/','UsuarioController@index')->name('perfil');
-// 	Route::	get('/correo','UsuarioController@Usuario')->name('usuario');
-// 	Route::	get('/s','UsuarioController@setUsuario')->name('setUsuario');
-// 	Route::	get('/contraseña','UsuarioController@Contra')->name('contra');
-// 	Route::	get('/ss','UsuarioController@setContr')->name('setContr');
-// });
-
-// /* PDF */
-// Route::get('/pdf', 'PDFController@PDF')->name('downloadPDF');
+/* PDF */
+Route::get('/pdf', 'PDFController@PDF')->name('downloadPDF');
 
 
+Route::prefix('usuario')->group(function(){
+Route::	get('/','UsuarioController@index')->name('perfil');
+Route::	get('/correo','UsuarioController@Usuario')->name('usuario');
+Route::	get('/s','UsuarioController@setUsuario')->name('setUsuario');
+Route::	get('/contraseña','UsuarioController@Contra')->name('contra');
+Route::	get('/ss','UsuarioController@setContr')->name('setContr');
+});
 
+/* PDF */
+Route::get('/pdf', 'PDFController@PDF')->name('downloadPDF');
 
-// /* HISTORIA */ 
+/* HISTORIA */ 
 
-// Route::get('/historia', function(){ 
-// 	return view('historiaClinica');
-// })-> name('historia');
+Route::get('/historia', function(){ 
+	return view('historiaClinica');
+})-> name('historia');
 

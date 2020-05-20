@@ -3,8 +3,14 @@
 @section('content')
 	<div id="boxCrear">
 		<div id="title">
-			Bienvenido {{$user->username}} Cambiar? 
+			Bienvenido {{$user->nombrePaciente}}  
 		</div>
+		</div>
+		<div>Estado civil : {{$user->estadoCivil}}
+		</div>
+		<div>Telefono: {{$user->telefono}} </div>
+		<div>Sexo: {{$user->sexo}} </div>
+
 		<div>Elige el elemento que desee modificar</div>
 		<div id="maincontent">
 			<a href="{{ route('usuario') }}">
@@ -12,7 +18,7 @@
 			    	Correo electrónico 
 			    </div>
 		    </a>
-		    <a href="{{ route('crearCita') }}">
+		    <a href="{{ route('contra') }}">
 			    <div class="box" id="crearCitas" >
 			    	Contraseña:
 			    </div>

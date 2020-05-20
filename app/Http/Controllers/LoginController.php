@@ -17,15 +17,31 @@ class LoginController extends Controller
 
     	$passw= $request->input('passw');
 
-    	$client = new Client([
-            'base_uri' => 'http://91.134.137.144:9090/authentication/authenticate/'
-        ]);
+    	$client = (new ApiController())->getClient();
     	
-        $response = $client->request('GET',"{$user}/{$passw}");
-        $response =json_decode($response->getBody()->getContents());
-        $jwt = $response->jwt;
+        $response = $client->request('GET',"authentication/authenticate/{$user}/{$passw}");
+        $response =json_decode($response->getBody());
+        $jwt = $response->jwt;    
 
         Cookie::queue('authentication',$jwt,60);
+
+        $response = $client->request('GET',"medical_history/retrieve_information/{$user}/{$passw}",['headers' => ['authentication' => $jwt]]);
+
+        $response =json_decode($response->getBody());
+        $historia = (json_decode($response->data))->data;
+        $historia = json_encode($historia);
+
+        $request->session()->put('historia',"{$historia}");
+
+
+
+        $response = $client->request('GET',"user/retrieve_information/{$user}/{$passw}",['headers' => ['authentication' => $jwt]]);
+
+        $response =json_decode($response->getBody());
+
+        $usuario = (json_decode($response->data))->data;
+        $usuario = json_encode($usuario);
+        $request->session()->put('usuario',"{$usuario}");
 
         return redirect()->route('citasIndex');
 
