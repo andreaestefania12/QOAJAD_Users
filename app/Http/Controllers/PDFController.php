@@ -7,8 +7,14 @@ use Illuminate\Http\Request;
 class PDFController extends Controller
 {
     //
+    public function getHistoria()
+    {
+    	return view('historia');
+    }
     public function PDF(){
-        $pdf = \PDF::loadview('pdf');
-        return $pdf->download('prueba.pdf');
+    	$historia = json_decode(session()->get('historia'));
+    	$usuario = json_decode(session()->get('usuario'));
+        $pdf = \PDF::loadview('HistoriaClinica',compact('historia','usuario'));
+        return $pdf->download('HistoriaClinica.pdf');
     }
 }

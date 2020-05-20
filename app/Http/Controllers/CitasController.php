@@ -68,10 +68,8 @@ class CitasController extends Controller
             'base_uri' => 'http://91.134.137.144:9090/appointment/create',
             'headers' => ['authentication' => $jwt , 'Content-Type' => 'application/json']
         ]); 
-        $response = $client->request('POST','',['body' => $json]);
+        $response = $client->request('POST','',['body' => $json]); 
     }
-
-
 
 
 

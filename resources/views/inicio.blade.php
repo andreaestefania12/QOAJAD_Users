@@ -24,7 +24,7 @@
         <div class="layer1"></div>      
     </a> 
     <div class="layer2"> 
-        <h1>Comenzar</h1>
+        <h1>Iniciar</h1>
     </div>
         
     </section>

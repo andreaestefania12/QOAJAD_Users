@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::prefix('/inicio')->group(function(){
+    Route::	get('/','LoginController@inicio')->name('inicio');
+});
+
 /* REGISTRO */
 
 Route::prefix('registro')->group(function(){
@@ -34,6 +38,8 @@ Route::prefix('citas')->group(function(){
 	Route::	get('/{ips}/{esp}','CitasController@espCita')->name('espCita');	});
 
 
+
+
 Route::prefix('guardar')->group(function(){
 	Route::	get('/{doctorDocument}/{date}','CitasController@guardarCita')->name('guardar');
 });
@@ -47,7 +53,7 @@ Route::prefix('login')->group(function(){
 
 
 /* PDF */
-Route::get('/pdf', 'PDFController@PDF')->name('downloadPDF');
+
 
 
 Route::prefix('usuario')->group(function(){
@@ -58,12 +64,12 @@ Route::	get('/contraseña','UsuarioController@Contra')->name('contra');
 Route::	get('/ss','UsuarioController@setContr')->name('setContr');
 });
 
-/* PDF */
-Route::get('/pdf', 'PDFController@PDF')->name('downloadPDF');
+
 
 /* HISTORIA */ 
 
-Route::get('/historia', function(){ 
-	return view('historiaClinica');
-})-> name('historia');
+Route::prefix('/historia')->group(function(){ 
+	Route::get('/', 'PDFController@getHistoria')->name('historia');
+	Route::get('/pdf', 'PDFController@PDF')->name('downloadPDF');
+});
 

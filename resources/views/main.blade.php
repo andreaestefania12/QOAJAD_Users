@@ -21,7 +21,7 @@
             <!--- MENÚ DE ARRIBA --->
             <header>
                 <ul>         
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href="{{ route('inicio') }}">Inicio</a></li>
                     <li><a href="{{ route('citasIndex') }}">Citas</a>
                         <ul>
                             <li><a href="{{ route('crearCita') }}">Crear cita</a></li>

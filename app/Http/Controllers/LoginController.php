@@ -10,9 +10,15 @@ use Cookie;
 
 class LoginController extends Controller
 {
+
+    public function inicio()
+        {
+            return view('inicio');
+        }
+
     public function index(Request $request)
     {
-
+        
     	$user= $request->input('user');
 
     	$passw= $request->input('passw');
@@ -43,7 +49,7 @@ class LoginController extends Controller
         $usuario = json_encode($usuario);
         $request->session()->put('usuario',"{$usuario}");
 
-        return redirect()->route('citasIndex');
+        return redirect()->route('inicio');
 
         
     }
