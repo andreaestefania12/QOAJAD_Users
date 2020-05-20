@@ -57,6 +57,7 @@ button{
 	width: 100%;
 }
 
+
 #title{
 	color: white;
 	font-size: 60px;	
@@ -68,9 +69,15 @@ button{
 	display: flex;	
 	justify-content: flex-start;
 	flex-wrap: wrap;
-	margin-left: 90px;
+	margin-left: 90px; 
 
 }
+
+
+.consult {
+	color: white;
+}
+
 .boxIPS{
 	background-color: #f7f7f7;
 	width: 200px;

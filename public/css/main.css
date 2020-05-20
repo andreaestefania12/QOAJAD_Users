@@ -1,12 +1,14 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color:black;
+  /*position: fixed;*/
 }
 
 #HomePage{
     display: grid;
     width: 100%;
-    height: 623px;
+    height: 625px;
     grid-template-areas: "nav head"
                        "nav  main";
     grid-template-rows: 90px 1fr;
@@ -15,13 +17,14 @@ body {
 
 #HomePage > header {
   grid-area: head;
-  background-color: #1b3f7d;
 }
 
 header ul{
     list-style:none;
-    display: flex;
+    display: block;
     justify-content: space-around;
+    /*position: fixed;*/
+    background-color: #1b3f7d;   /* Se modificó la barra para que aparezca mientras se baja el scroll */
     
 }
 
@@ -63,12 +66,13 @@ header ul li:hover > ul {
     display:block;
     background: #1b3f7b;
 }
-/*Barra lateral*/
 
+/*Barra lateral*/
 
 #HomePage > nav {
   grid-area: nav;
   background-color: #1b3f7d ;
+  position: fixed;
 }
 
 #logo{
@@ -88,6 +92,8 @@ nav  {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    position: absolute;  /* se modificó aquí para que los elementos no se separan a lo loco*/
+    height: 100%;
 }
 
 nav h1{
@@ -101,13 +107,15 @@ nav div{
 
 
 #HomePage > main {
-  grid-area: main;
-  background: -webkit-linear-gradient(top, rgb(119, 206, 226) 2%, rgb(119, 206, 226) 21%, rgb(213, 238, 243) 40%, rgb(213, 238, 243) 63%, rgb(213, 238, 243) 82%, rgb(119, 206, 226) 96%);}
+    grid-area: main;
+  /*background: -webkit-linear-gradient(top, rgb(119, 206, 226) 2%, rgb(119, 206, 226) 21%, rgb(213, 238, 243) 40%, rgb(213, 238, 243) 63%, rgb(213, 238, 243) 82%, rgb(119, 206, 226) 96%);}
+*/
 
+}
 
 #cal { 
     -moz-box-shadow:0px 1px px rgba(0, 0, 0, 0.25); 
-    -webkit-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25); 
+    -webkit-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25);
     margin:50px auto; 
     font: 13px/1.5 "Helvetica Neue", Helvatica, Arial, san-serif; 
     display:table; 
@@ -246,4 +254,33 @@ nav div{
 } 
 #cal #cal-frame table.temp { 
     position:absolute; 
+}
+
+.Calendario-month{
+    color: #1b3f7d;
+}
+
+.dias-mes{
+    color: black;
+}
+
+.SiCita{
+    background-color: #D1C4FF;
+}
+
+.event a {
+    background-color: #5FBA7D !important;
+    color: #ffffff !important;
+}
+
+div.ui-datepicker-title{
+    color: black;
+}
+
+.bloque{
+    background: #1b3f7d ;
+    width: 10000%;
+    height: 80px;
+    display: block;
+    top: 0;
 }
