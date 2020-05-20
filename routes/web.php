@@ -40,31 +40,28 @@ Route::prefix('login')->group(function(){
 });
 
 // /* USUARIO */
-// <<<<<<< HEAD
 
-
-// /* PDF */
-// Route::get('/pdf', 'PDFController@PDF')->name('downloadPDF');
-
-// =======
-// >>>>>>> d3b521c2d3df0670b5f670eea32a257f1cd91ba2
-// Route::prefix('usuario')->group(function(){
-// 	Route::	get('/','UsuarioController@index')->name('perfil');
-// 	Route::	get('/correo','UsuarioController@Usuario')->name('usuario');
-// 	Route::	get('/s','UsuarioController@setUsuario')->name('setUsuario');
-// 	Route::	get('/contraseña','UsuarioController@Contra')->name('contra');
-// 	Route::	get('/ss','UsuarioController@setContr')->name('setContr');
-// });
+Route::prefix('usuario')->group(function(){
+	Route::	get('/','UsuarioController@index')->name('perfil');
+	Route::	get('/correo','UsuarioController@Usuario')->name('usuario');
+	Route::	get('/s','UsuarioController@setUsuario')->name('setUsuario');
+	Route::	get('/contraseña','UsuarioController@Contra')->name('contra');
+	Route::	get('/ss','UsuarioController@setContr')->name('setContr');
+});
 
 // /* PDF */
-// Route::get('/pdf', 'PDFController@PDF')->name('downloadPDF');
+Route::get('/pdf', 'PDFController@PDF')->name('downloadPDF');
+
+
+/* PDF */
+Route::get('/pdf', 'PDFController@PDF')->name('downloadPDF');
 
 
 
 
 // /* HISTORIA */ 
 
-// Route::get('/historia', function(){ 
-// 	return view('historiaClinica');
-// })-> name('historia');
+Route::get('/historia', function(){ 
+	return view('historiaClinica');
+})-> name('historia');
 
