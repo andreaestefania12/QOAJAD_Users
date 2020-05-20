@@ -8,6 +8,7 @@ use Cookie;
 
 class CitasController extends Controller
 {
+
     public function index()
     {
     	return view('Citas.menuCitas');
@@ -15,38 +16,22 @@ class CitasController extends Controller
 
     public function crearCita()
     {
-        $client = new Client([
-            'base_uri' => 'http://thawing-stream-48846.herokuapp.com'
-        ]);
-
-        $response = $client->request('GET','ips');
-
-        $ipslist = json_decode($response->getBody()->getContents());
-
-    	return view('Citas.crearCita', compact('ipslist'));
-
-        //  $jwt=Cookie::get('authentication');
-
-
-        // $client = new Client([
-        //     'base_uri' => 'http://91.134.137.144:9090/hpi/list_all',
-        //     'headers' => ['authentication' => $jwt]
-        // ]);
-        // dd($response);
-        // $response = $client->request('GET');
+        $client = (new ApiController())->getClient();
+        $jwt =  (new ApiController())->getCookie();
+       
+        $response = $client->request('GET',"hpi/list_all",['headers' => ['authentication' => $jwt]]);
         
-        // $ipslist = json_decode($response->getBody());
+        $ipslist = json_decode($response->getBody());
 
-        // return view('Citas.crearCita', compact('ipslist'));
+        return view('Citas.crearCita', compact('ipslist'));
     }
 
     public function ipsCita($ips)
     {
-        $client = new Client([
-            'base_uri' => 'http://thawing-stream-48846.herokuapp.com'
-        ]);
+        $client = (new ApiController())->getClient();
+        $jwt =  (new ApiController())->getCookie();
 
-        $response = $client->request('GET',"ips/{$ips}");
+        $response = $client->request('GET',"specialty/list_all/{$ips}",['headers' => ['authentication' => $jwt]] );
 
         $espelist = json_decode($response->getBody());
         
@@ -56,11 +41,10 @@ class CitasController extends Controller
 
     public function espCita($ips, $esp)
     {
-        $client = new Client([
-            'base_uri' => 'http://thawing-stream-48846.herokuapp.com'
-        ]);
+        $client = (new ApiController())->getClient();
+        $jwt =  (new ApiController())->getCookie();
 
-        $response = $client->request('GET',"horarios/{$ips}/{$esp}");
+        $response = $client->request('GET',"appointment/all_available_appointments/{$ips}/{$esp}",['headers' => ['authentication' => $jwt]]);
 
         $horarios = json_decode($response->getBody());
 
