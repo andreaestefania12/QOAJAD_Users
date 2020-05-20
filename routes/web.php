@@ -25,6 +25,7 @@ Route::prefix('/inicio')->group(function(){
 
 Route::prefix('registro')->group(function(){
 	Route::	get('/','RegistroController@index')->name('registro');
+	Route::	post('/crear','RegistroController@registrar');
 });
 
 

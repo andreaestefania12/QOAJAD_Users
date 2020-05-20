@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use App\Http\Controllers\setcookie;
+use Guzzle\Http\Exception\ClientErrorResponseException;
 use Cookie;
 
 
@@ -18,13 +19,13 @@ class LoginController extends Controller
 
     public function index(Request $request)
     {
+        try {
+            $user= $request->input('user');
+
+        $passw= $request->input('passw');
+
+        $client = (new ApiController())->getClient();
         
-    	$user= $request->input('user');
-
-    	$passw= $request->input('passw');
-
-    	$client = (new ApiController())->getClient();
-    	
         $response = $client->request('GET',"authentication/authenticate/{$user}/{$passw}");
         $response =json_decode($response->getBody());
         $jwt = $response->jwt;    
@@ -40,7 +41,6 @@ class LoginController extends Controller
         $request->session()->put('historia',"{$historia}");
 
 
-
         $response = $client->request('GET',"user/retrieve_information/{$user}/{$passw}",['headers' => ['authentication' => $jwt]]);
 
         $response =json_decode($response->getBody());
@@ -50,6 +50,11 @@ class LoginController extends Controller
         $request->session()->put('usuario',"{$usuario}");
 
         return redirect()->route('inicio');
+        } catch (ClientErrorResponseException  $e) {
+            $responseBody = $e->getResponse()->getBody(true);
+            dd($responseBody);
+        }
+    	
 
         
     }
