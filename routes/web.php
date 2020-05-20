@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('inicio');
+    return view('login');
 });
 
 /* REGISTRO */
@@ -40,15 +40,5 @@ Route::prefix('login')->group(function(){
 });
 
 
-
-
-// Route::post('/cookie/set', 'CookieController@setcookie');
-// Route::get('/cookie/get', 'CookieController@getcookie');
-
-
-// Route::get('pruebacookie', function(){
-// 	$nueva_cookie = cookie('probando', 'valorprobando', 60);
-// 	$response = response("Voy a enviarte una cookie");
-// 	$response->withCookie($nueva_cookie);
-// 	return $response;
-// });
+/* PDF */
+Route::get('/pdf', 'PDFController@PDF')->name('downloadPDF');
