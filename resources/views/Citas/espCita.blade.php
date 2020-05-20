@@ -9,7 +9,7 @@
 	<div id="content">
 		@foreach ($horarios as $hora)
 			
-			<div> {{ $hora->name }}</div>
+			<h1 class="consult"> {{ $hora->name }}</h1>
 				@foreach($hora->availableAppointment as $ava)
 				<div class="boxIPS">
 					<a href="{{ route('guardar',[$ava->doctorDocument,$ava->date]) }}">

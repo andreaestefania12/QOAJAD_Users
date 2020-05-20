@@ -1,84 +1,86 @@
-#maincontent{
-	display: flex;
-	width: : 100%;
+#maincontent {
+    display: flex;
+    width: 100%;
     justify-content: space-around;
     align-items: flex-start;
     padding-top: 12px;
 }
 
-.box{
-	width: 200px;	
-	height: 200px;
-	line-height: 75px;
-	font-size: 20px;
-	display: flex;
-	flex-direction: column;		
-	justify-content: 	center;	
-	text-align: center;
-	color: #2a6496;
+.box {
+    width: 200px;
+    height: 200px;
+    line-height: 75px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #2a6496;
     border-radius: 50%;
     border: 2px solid #2a6496;
     cursor: pointer;
     overflow: hidden;
     background-color: #f7f7f7;
-    
 }
 
 .box:hover {
-	box-shadow: 0 20px 10px #2a6496;
+    box-shadow: 0 20px 10px #2a6496;
 }
 
- a{
-	color: white;
-	text-decoration: none;
-
+a {
+    color: #2a6496;
+    text-decoration: none;
 }
 
-button{
-	background-color: #4a8eff;
-	color: white;
+a:hover {
+    color: white;
 }
 
-#verCitas{
-	
+button {
+    background-color: #4a8eff;
+    color: white;
 }
 
-#crearCitas{
-}
+#verCitas {}
 
-#borrarCitas{
-}
+#crearCitas {}
+
+#borrarCitas {}
 
 
 /*PÁGINA CREAR CITA*/
-#boxCrear{
-	display: flex;
-	flex-direction: column;
-	width: 100%;
+
+#boxCrear {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
-#title{
-	color: white;
-	font-size: 60px;	
-	text-align: center;
+#title {
+    color: white;
+    font-size: 60px;
+    text-align: center;
 }
 
-
-#content{
-	display: flex;	
-	justify-content: flex-start;
-	flex-wrap: wrap;
-	margin-left: 90px;
-
+#content {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-left: 90px;
 }
-.boxIPS{
-	background-color: #f7f7f7;
-	width: 200px;
-	height: 80px;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	justify-content: center;	
+
+.consult {
+    color: white;
+}
+
+.boxIPS {
+    background-color: #f7f7f7;
+    width: 200px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     border: 2px solid #2a6496;
     color: #2a6496;
     cursor: pointer;
@@ -86,10 +88,7 @@ button{
     margin: 10px;
 }
 
-
-.boxIPS:hover{
-	background-color: #2a6496;
-	color: white;
+.boxIPS:hover {
+    background-color: #2a6496;
+    color: white;
 }
-
-
