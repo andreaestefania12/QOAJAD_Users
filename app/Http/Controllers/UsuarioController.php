@@ -34,14 +34,18 @@ class UsuarioController extends Controller
     public function setUsuario(Request $request)
     {
     	$user = $this->getUsuario();
-    	$newUser =new stdClass();
-    	$newUser->username = $request->input('username');
-    	$newUser->document = $user->document;
-    	$newUser->password ="";
+    	$newUser = [ 'username' => $request->input('username'),'document' => $user->document, 'password' =>""];
     	$json = json_encode($newUser);
-    	dd($json);
-    	$client = (new ApiController())->getClient();
         $jwt =  (new ApiController())->getCookie();
+
+        $client = new Client([
+            'base_uri' => 'http://91.134.137.144:9090/user/update',
+            'headers' => ['authentication' => $jwt , 'Content-Type' => 'application/json']
+        ]); 
+        $response = $client->request('PUT','',['body' => $json]);
+
+
+        
     }
 
     public function setContr(Request $request)

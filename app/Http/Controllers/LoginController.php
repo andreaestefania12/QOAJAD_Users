@@ -24,6 +24,7 @@ class LoginController extends Controller
         $response = $client->request('GET',"{$user}/{$passw}");
         $response =json_decode($response->getBody()->getContents());
         $jwt = $response->jwt;
+
         Cookie::queue('authentication',$jwt,60);
 
         return redirect()->route('citasIndex');

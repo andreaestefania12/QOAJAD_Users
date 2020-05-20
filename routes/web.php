@@ -44,6 +44,7 @@ Route::prefix('login')->group(function(){
 
 /* PDF */
 Route::get('/pdf', 'PDFController@PDF')->name('downloadPDF');
+
 Route::prefix('usuario')->group(function(){
 	Route::	get('/','UsuarioController@index')->name('perfil');
 	Route::	get('/correo','UsuarioController@Usuario')->name('usuario');
