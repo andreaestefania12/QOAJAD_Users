@@ -4,31 +4,53 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
-
+use App\Http\Controllers\setcookie;
+use Cookie;
 
 
 class LoginController extends Controller
 {
+
+    public function inicio()
+        {
+            return view('inicio');
+        }
+
     public function index(Request $request)
     {
-
+        
     	$user= $request->input('user');
 
     	$passw= $request->input('passw');
 
-    	$client = new Client([
-            'base_uri' => 'http://91.134.137.144:9090/authentication/authenticate/'
-        ]);
+    	$client = (new ApiController())->getClient();
     	
-        $response = $client->request('GET',"{$user}/{$passw}");
-        
+        $response = $client->request('GET',"authentication/authenticate/{$user}/{$passw}");
+        $response =json_decode($response->getBody());
+        $jwt = $response->jwt;    
 
-        $jwtComple =$response->getBody()->getContents();
-        $jwt = substr($jwtComple, 15); 
+        Cookie::queue('authentication',$jwt,60);
 
-        $cookie= cookie('authentication',$jwt,1);
+        $response = $client->request('GET',"medical_history/retrieve_information/{$user}/{$passw}",['headers' => ['authentication' => $jwt]]);
 
-        return view('temp')->with('cookie',$cookie);
+        $response =json_decode($response->getBody());
+        $historia = (json_decode($response->data))->data;
+        $historia = json_encode($historia);
+
+        $request->session()->put('historia',"{$historia}");
+
+
+
+        $response = $client->request('GET',"user/retrieve_information/{$user}/{$passw}",['headers' => ['authentication' => $jwt]]);
+
+        $response =json_decode($response->getBody());
+
+        $usuario = (json_decode($response->data))->data;
+        $usuario = json_encode($usuario);
+        $request->session()->put('usuario',"{$usuario}");
+
+        return redirect()->route('inicio');
+
         
     }
 }

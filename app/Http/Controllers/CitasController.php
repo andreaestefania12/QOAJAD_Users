@@ -4,34 +4,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use Cookie;
 
 class CitasController extends Controller
 {
+
     public function index()
-    {
+    {   
+
     	return view('Citas.menuCitas');
     }
 
     public function crearCita()
     {
-        $client = new Client([
-            'base_uri' => 'http://thawing-stream-48846.herokuapp.com'
-        ]);
+        $client = (new ApiController())->getClient();
+        $jwt =  (new ApiController())->getCookie();
+       
+        $response = $client->request('GET',"hpi/list_all",['headers' => ['authentication' => $jwt]]);
+        
+        $ipslist = json_decode($response->getBody());
 
-        $response = $client->request('GET','ips');
-
-        $ipslist = json_decode($response->getBody()->getContents());
-
-    	return view('Citas.crearCita', compact('ipslist'));
+        return view('Citas.crearCita', compact('ipslist'));
     }
 
     public function ipsCita($ips)
     {
-        $client = new Client([
-            'base_uri' => 'http://thawing-stream-48846.herokuapp.com'
-        ]);
+        $client = (new ApiController())->getClient();
+        $jwt =  (new ApiController())->getCookie();
 
-        $response = $client->request('GET',"ips/{$ips}");
+        $response = $client->request('GET',"specialty/list_all/{$ips}",['headers' => ['authentication' => $jwt]] );
 
         $espelist = json_decode($response->getBody());
         
@@ -39,22 +40,47 @@ class CitasController extends Controller
         return view('Citas.ipsCita', compact('espelist','ips'));
     }
 
-    public function espCita($ips, $esp)
+    public function espCita(Request $request,$ips, $esp)
     {
-        $client = new Client([
-            'base_uri' => 'http://thawing-stream-48846.herokuapp.com'
-        ]);
+        $client = (new ApiController())->getClient();
+        $jwt =  (new ApiController())->getCookie();
 
-        $response = $client->request('GET',"horarios/{$ips}/{$esp}");
+        $response = $client->request('GET',"appointment/all_available_appointments/{$ips}/{$esp}",['headers' => ['authentication' => $jwt]]);
 
         $horarios = json_decode($response->getBody());
+        $request->session()->put('ips',"{$ips}");
 
         return view('Citas.espCita', compact('horarios'));
+
     }
+
+    public function guardarCita($doctorDocument,$date)
+    {
+        $user = json_decode(session()->get('usuario'));
+        $client = (new ApiController())->getClient();
+        $jwt =  (new ApiController())->getCookie();
+        $ips = session()->get('ips');
+        $date = date('M d, yy h:m:s A',strtotime($date));
+        $appointment = [ 'patientDocument' => $user->identificacion,'date' => $date, 'doctorDocument' => $doctorDocument, 'healthProviderInstituteName' => $ips];
+        $json = json_encode($appointment);
+        
+        $client = new Client([
+            'base_uri' => 'http://91.134.137.144:9090/appointment/create',
+            'headers' => ['authentication' => $jwt , 'Content-Type' => 'application/json']
+        ]); 
+        $response = $client->request('POST','',['body' => $json]); 
+    }
+
 
 
     public function verCita()
     {
+        $client = (new ApiController())->getClient();
+        $jwt =  (new ApiController())->getCookie();
+        $userDocument = ((new UsuarioController())->getUsuario());
+        dd($userDocument);
+        $response = $client->request('GET',"/appointment/all_user_appointments/{$userDocument}",['headers' => ['authentication' => $jwt]]);        
+
     	return view('Citas.verCita');
     }
 

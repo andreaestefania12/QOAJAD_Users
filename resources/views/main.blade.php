@@ -47,30 +47,44 @@
 
     </head>
 
-    <body>         
+    <body>        
+
+ 
         <section id="HomePage">
 
             <!--- MENÚ DE ARRIBA --->
             <div class="bloque"></div>
             <header>
                 <ul>         
+
                     <li id="inicio"><a href="{{ route('citasIndex') }}">Inicio</a></li>
                     <li id="citas"><a href="{{ route('citasIndex') }}">Citas</a>
+
+                    <li><a href="{{ route('inicio') }}">Inicio</a></li>
+                    <li><a href="{{ route('citasIndex') }}">Citas</a>
+
                         <ul>
                             <li ><a href="{{ route('crearCita') }}">Crear cita</a></li>
                             <li><a href="{{ route('verCita') }}">Ver citas</a></li>
                             <li><a href="{{ route('borrarCita') }}">Modificar  borrar cita</a></li>
                         </ul>           
                     </li>
+
                     <li id="historia"><a href="#">Historia Clinica</a></li>    
                     </ul>
                
+
+
+                    <li><a href="{{route('historia')}}">Historia</a></li>    
+                </ul>
+
             </header>
 
             <!--- MENÚ LATERAL -->
             <nav>
                 <div id="logo"><div></div>
                 </div> 
+
                 <h1>EPS VALLEDEV</h1>
                 <h2>Configuración</h2>
 
@@ -78,6 +92,13 @@
 
                     <!-- <div id="cal"> -->
                 <div id="datepicker"></div>
+
+                <div>LOGO</div>
+                <div>Nombre</div>
+                <a href="{{ route('perfil') }}">  
+                    <div>Configuración</div>
+                </a>
+                
 
             </nav>
             
