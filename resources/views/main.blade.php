@@ -6,15 +6,19 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
        
         <title>QOAJAD</title>
+        
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <link rel="stylesheet" href="{{ asset('css/citas.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main/contenido.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main/menuLateral.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main/menu.css') }}">
+        <!-- PERFIL CSS-->
+        <link rel="stylesheet" href="{{ asset('css/perfil.css') }}">
 
 
         <!-- Evento cita calendario -->
