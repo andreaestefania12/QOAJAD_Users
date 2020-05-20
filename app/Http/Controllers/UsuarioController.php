@@ -22,6 +22,7 @@ class UsuarioController extends Controller
     	$user = $this->getUsuario();
     	return view('Usuario.perfil',compact('user'));
     }
+    
     public function Usuario()
     {
         $client = (new ApiController())->getClient();

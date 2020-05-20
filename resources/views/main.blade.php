@@ -6,15 +6,20 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
        
         <title>QOAJAD</title>
+        
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <link rel="stylesheet" href="{{ asset('css/citas.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main/contenido.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main/menuLateral.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main/menu.css') }}">
+        <!-- PERFIL CSS-->
+        <link rel="stylesheet" href="{{ asset('css/perfil.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/form.css') }}">
 
 
         <!-- Evento cita calendario -->
@@ -59,7 +64,7 @@
 
                 
 
-                    <li><a href="{{ route('inicio') }}">Inicio</a></li>
+                    <li> <a href="{{ route('inicio') }}">Inicio</a></li>
                     <li><a href="{{ route('citasIndex') }}">Citas</a>
 
                         <ul>
@@ -83,7 +88,7 @@
 
                 <h1>EPS VALLEDEV</h1>
                 <a href="{{ route('perfil') }}">  
-                    <div>Configuración</div>
+                <i class="fas fa-user-cog"></i>
                 </a>
 
                 <a href="{{ route('cerrar') }}">  

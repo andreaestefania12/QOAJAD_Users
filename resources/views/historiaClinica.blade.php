@@ -28,7 +28,7 @@
     <h1> Fisiología</h1>
         <p>Lactancia: {{$historia->fisiologica->lactancia}}</p>
         <p>Edad de iniciación sexual: {{$historia->fisiologica->iniciacionSexual}}</p>
-        <p>Giceco obstretico{{$historia->fisiologica->ginecoObstretico}}</p>
+        <p>Gineco obstretico{{$historia->fisiologica->ginecoObstretico}}</p>
         <p>Menarca: {{$historia->fisiologica->menarca}}</p>
         <p>Embarazo:{{$historia->fisiologica->embarazos}}</p>
         <p>Partos:{{$historia->fisiologica->partos}}</p>
