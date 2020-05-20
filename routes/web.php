@@ -53,8 +53,6 @@ Route::prefix('login')->group(function(){
 
 });
 
-});
-
 //* USUARIO */
 
 Route::prefix('usuario')->group(function(){
