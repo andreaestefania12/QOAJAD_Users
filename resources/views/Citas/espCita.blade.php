@@ -4,7 +4,7 @@
 
 <div id="boxCrear">
 	<div id="title">
-		Eliga una horario
+		Eliga un horario
 	</div>
 	<div id="content">
 		@foreach ($horarios as $hora)

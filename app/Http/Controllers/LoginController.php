@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
-
+use App\Http\Controllers\setcookie;
+use Cookie;
 
 
 class LoginController extends Controller
@@ -21,14 +22,11 @@ class LoginController extends Controller
         ]);
     	
         $response = $client->request('GET',"{$user}/{$passw}");
-        
+        $response =json_decode($response->getBody()->getContents());
+        $jwt = $response->jwt;
+        Cookie::queue('authentication',$jwt,20);
 
-        $jwtComple =$response->getBody()->getContents();
-        $jwt = substr($jwtComple, 15); 
-
-        $cookie= cookie('authentication',$jwt,1);
-
-        return view('temp')->with('cookie',$cookie);
+        return view('Citas.menuCitas');
         
     }
 }

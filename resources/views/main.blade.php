@@ -41,7 +41,9 @@
                 </div> 
                 <div>LOGO</div>
                 <div>Nombre</div>
-                <div>Configuración</div>
+                <a href="{{ route('perfil') }}">  
+                    <div>Configuración</div>
+                </a>
                 <div id="cal">
                     <div class="header"> 
                         <span class="left button" id="prev"> &lang; </span> 
