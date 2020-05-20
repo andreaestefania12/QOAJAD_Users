@@ -32,6 +32,10 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    color: white;
+}
+
 button {
     background-color: #4a8eff;
     color: white;

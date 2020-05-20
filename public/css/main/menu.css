@@ -7,7 +7,7 @@ header ul {
     display: block;
     justify-content: space-around;
     /*position: fixed;*/
-    background-color: #1b3f7d;
+    background-color: gray;
     /* Se modificó la barra para que aparezca mientras se baja el scroll */
 }
 
@@ -40,9 +40,14 @@ header ul ul {
     padding: 0;
 }
 
-header ul ul a {
-    line-height: 200%;
+nav {
+    top: 0%;
 }
+
+
+/* header ul ul a {
+    line-height: 200%;
+} */
 
 header ul li:hover>ul {
     display: block;
@@ -51,8 +56,12 @@ header ul li:hover>ul {
 
 .bloque {
     background: #1b3f7d;
-    width: 10000%;
+    width: 546.5%;
     height: 80px;
-    display: block;
+    /* display: block; */
     top: 0;
+}
+
+li a {
+    border-radius: 30%;
 }

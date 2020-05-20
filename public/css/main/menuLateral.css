@@ -31,6 +31,14 @@ nav h1 {
     color: #fff;
 }
 
+nav h2 {
+    color: white;
+}
+
 nav div {
     color: #fff;
+}
+
+#datepicker.hasDatepicker {
+    top: 100%;
 }
