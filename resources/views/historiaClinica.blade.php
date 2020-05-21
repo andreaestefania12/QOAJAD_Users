@@ -8,8 +8,8 @@
 <body>
 	<section id="InfoPers">
         <h1>Información Personal</h1>
-        <p>Cédula : {{$usuario->identificacion}}</p>
-        <p>Nombre: {{$usuario->nombrePaciente}}</p>
+        <p>Cédula : {{$usuario->DNI}}</p>
+        <p>Nombre: {{$usuario->nombreCliente}}</p>
         <p>Fecha de Nacimiento:{{$usuario->fechaNacimiento}}</p>
         <p>Estado Civil: {{$usuario->estadoCivil}}</p>
         <p>Teléfono: {{$usuario->telefono}}</p>

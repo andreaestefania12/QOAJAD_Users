@@ -43,7 +43,7 @@ class UsuarioController extends Controller
     public function setUsuario(Request $request)
     {
     	$user = $this->getUsuario();
-    	$newUser = [ 'username' => $request->input('username'),'document' => $user->document, 'password' =>"password"];
+    	$newUser = [ 'username' => $request->input('username'),'document' => $user->DNI, 'password' =>"password"];
     	$json = json_encode($newUser);
         $jwt =  (new ApiController())->getCookie();
 

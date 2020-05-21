@@ -8,7 +8,7 @@
 <div>
 	<div class="boxCrear">
 		<div id="title">
-			Bienvenido {{$user->nombrePaciente}}  
+			Bienvenido {{$user->nombreCliente}}  
 		</div>
 	</div>
 

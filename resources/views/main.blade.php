@@ -52,32 +52,41 @@
 
     </head>
 
-    <body>        
-
- 
-        <section id="HomePage">
+    <body>
+    
+        <div id="HomePage">
 
             <!--- MENÚ DE ARRIBA --->
-            <div class="bloque"></div>
+            <section class="bloque"></section>
             <header>
                 <ul>         
 
-                
+                <li> 
+                    <a href="{{ route('inicio') }}">
+                    <i class="fas fa-house-user"></i>
+                     Inicio
+                    </a> 
+                </li>
 
-                    <li> <a href="{{ route('inicio') }}">Inicio</a></li>
-                    <li><a href="{{ route('citasIndex') }}">Citas</a>
+                <li><a href="{{ route('citasIndex') }}">Citas</a></li>
 
-                        <ul>
-                            <li ><a href="{{ route('crearCita') }}">Crear cita</a></li>
-                            <li><a href="{{ route('verCita') }}">Ver citas</a></li>
-                            <li><a href="{{ route('borrarCita') }}">Modificar  borrar cita</a></li>
-                        </ul>           
-                    </li>
+                    <ul>
+                        <li ><a href="{{ route('crearCita') }}">Crear cita</a></li>
+                        <li><a href="{{ route('verCita') }}">Ver citas</a></li>
+                        <li><a href="{{ route('borrarCita') }}">Modificar  borrar cita</a></li>
+                    </ul>           
 
-                    <li id="historia"><a href="{{route('historia')}}">Historia Clínica</a></li>    
-                    </ul>
+
+                <li id="historia"><a href="{{route('historia')}}">Historia Clínica</a></li>    
                
                 </ul>
+
+                <!-- <ul>
+                    <button>
+                        <a href="{{ route('inicio') }}"></a>
+                        <i class="fas fa-house-user"></i>
+                    </button>
+                </ul> -->
 
             </header>
 
@@ -100,9 +109,7 @@
 
                     <!-- <div id="cal"> -->
                 <div id="datepicker"></div>
-
-                
-
+            
             </nav>
             
             <!--- CONTENIDO PRINCIPAL -->
@@ -111,7 +118,7 @@
                 @yield('content')
             </main>
 
-        </section>
+        </div>
 
     </body>
 

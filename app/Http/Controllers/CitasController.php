@@ -61,7 +61,7 @@ class CitasController extends Controller
         $jwt =  (new ApiController())->getCookie();
         $ips = session()->get('ips');
         $date = date('M d, yy h:m:s A',strtotime($date));
-        $appointment = [ 'patientDocument' => $user->identificacion,'date' => $date, 'doctorDocument' => $doctorDocument, 'healthProviderInstituteName' => $ips];
+        $appointment = [ 'patientDocument' => $user->DNI,'date' => $date, 'doctorDocument' => $doctorDocument, 'healthProviderInstituteName' => $ips];
         $json = json_encode($appointment);
         
         $client = new Client([
@@ -79,7 +79,7 @@ class CitasController extends Controller
 
         $client = (new ApiController())->getClient();
         $jwt =  (new ApiController())->getCookie();
-        $userDocument = ((new UsuarioController())->getUsuario())->identificacion;
+        $userDocument = ((new UsuarioController())->getUsuario())->DNI;
         $response = $client->request('GET',"/appointment/all_user_appointments/{$userDocument}",['headers' => ['authentication' => $jwt]]);
               
         $lista=json_decode($response->getBody()); 
