@@ -1,0 +1,74 @@
+body {
+    background-color: #B5DCCD;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+}
+
+
+/* ==========================================================================
+   #LAYOUT WIHT ANIMATION
+   ========================================================================== */
+
+section .layer1 {
+      position: absolute;
+    top: 50%;
+    left: 52.3%;
+    transform: translate(-50%, -50%);
+    width: 195px;
+    height: 90px;
+    /* background: url("images/home1V.jpg"); */
+    background-position: 90%;
+    background-repeat: no-repeat;
+    border-radius: 30px 30px 30px 30px;
+    z-index: 1;
+    transition: 2s;
+}
+
+
+/* ==========================================================================
+   #Text  COMENZAR WITH LINK 
+   ========================================================================== */
+
+h1{
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    width: 180px;
+    height: 80px;
+    background-color: #B5DCCD;
+    border-style: solid;
+    border-radius: 30px 30px 30px 30px;
+    border-color: #B5DCCD;
+    background-attachment: fixed;
+    color: #052378;
+}
+
+
+/* ==========================================================================
+   #BACKGROUND  
+   ========================================================================== */
+
+section .layer2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("images/error.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    transition: 2s;
+}
+
+.layer1:hover~.layer2 {
+    filter: blur(10px);
+}
+
+.layer1:hover {
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .8);
+}

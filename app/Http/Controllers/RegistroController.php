@@ -25,17 +25,10 @@ class RegistroController extends Controller
             'headers' => ['Content-Type' => 'application/json']
         ]); 
         
-    	try {
     		$response = $client->request('POST','',['body' => $json]);
-    	} catch (BadResponseException  $e) {
-    		 $response = $e->getResponse();
-    $responseBodyAsString = json_decode($response->getBody()->getContents());
-    	if($responseBodyAsString->status == 500)
-    	{
-    		return redirect()->route('registro')->with('alert','fallo');
-    	}
-    	return '<script type="text/javascript">alert("no fallo!");</script>';
-    	}
+    	
+    	return redirect()->route('cerrar') ;
+    	
     	
     	
     }

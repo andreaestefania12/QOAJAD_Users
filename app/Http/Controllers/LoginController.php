@@ -56,7 +56,7 @@ class LoginController extends Controller
         $request->session()->put('usuario',"{$usuario}");
 
         return redirect()->route('inicio');
-        } catch (Exception  $e) {
+        } catch (BadResponseException  $e) {
             return redirect()->route('cerrar');
         }
     	
