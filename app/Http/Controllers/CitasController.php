@@ -56,20 +56,26 @@ class CitasController extends Controller
 
     public function guardarCita($doctorDocument,$date)
     {
-        $user = json_decode(session()->get('usuario'));
+        try {
+            $user = json_decode(session()->get('usuario'));
         $client = (new ApiController())->getClient();
         $jwt =  (new ApiController())->getCookie();
         $ips = session()->get('ips');
         $date = date('M d, yy h:m:s A',strtotime($date));
         $appointment = [ 'patientDocument' => $user->DNI,'date' => $date, 'doctorDocument' => $doctorDocument, 'healthProviderInstituteName' => $ips];
         $json = json_encode($appointment);
-        
+         
         $client = new Client([
             'base_uri' => 'http://91.134.137.144:9090/appointment/create',
             'headers' => ['authentication' => $jwt , 'Content-Type' => 'application/json']
         ]); 
-        $response = $client->request('POST','',['body' => $json]); 
-       
+        $response = $client->request('POST','',['body' => $json]);
+        return back()->with('success', 'Cita creada correctamente');
+        } catch (\Exception $e) {
+            return back()->with('Error', 'Hubo un error al crear la cita ');
+        }
+        
+         
     }
 
 
