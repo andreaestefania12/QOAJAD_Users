@@ -32,13 +32,27 @@ Route::prefix('registro')->group(function(){
 
 /* CITAS */
 Route::prefix('citas')->group(function(){
-	Route::	get('/menu','CitasController@index')->name('citasIndex');
-	Route::	get('/','CitasController@crearCita')->name('crearCita');
+	Route::	get('/','CitasController@index')->name('citasIndex');
+	Route::	get('/crear','CitasController@crearCita')->name('crearCita');
 	Route::	get('/ver','CitasController@verCita')->name('verCita');
+	Route::	get('/editar','CitasController@editar')->name('editar');
+	Route::	get('crear/{ips}','CitasController@ipsCita')->name('ipsCita');
+	Route::	get('crear/{ips}/{esp}','CitasController@espCita')->name('espCita');	
 	Route::	get('/borrar','CitasController@borrarCita')->name('borrarCita');
-	Route::	get('/{ips}','CitasController@ipsCita')->name('ipsCita');
-	Route::	get('/{ips}/{esp}','CitasController@espCita')->name('espCita');	
+	Route::	get('/borrar/{id}','CitasController@borrarConfirma')->name('borrarConfirma');
+	Route::	get('/modificar','CitasController@actualizarCita')->name('actualizar');
+	Route::	get('/modificar/{id}','CitasController@actualizarIPS')->name('modificar');
+	Route::	get('actualizar/{ips}','CitasController@actualizarESP')->name('actualizarESP');
+	Route::	get('actualizar/{ips}/{esp}','CitasController@actualizarHorario')->name('actualizarHorario');
+	Route::	get('actualizar/nueva/{doctorDocument}/{date}','CitasController@guardarNuevaCita')->name('guardarNuevaCita');
+
+
+	
 });
+
+
+/*BORRAR CITAS*/
+
 
 
 Route::prefix('guardar')->group(function(){
