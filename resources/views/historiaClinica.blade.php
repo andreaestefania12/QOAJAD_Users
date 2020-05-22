@@ -6,6 +6,7 @@
     <title>Historia Clinica</title>
 </head>
 <body>
+
 	<section id="InfoPers">
         <h1>Información Personal</h1>
         <p>Cédula : {{$usuario->DNI}}</p>
@@ -17,13 +18,13 @@
     </section>
 	<section id="Antecedentes">
         <h1> Ficha de Identificación</h1>
-	        
+	        <p>Accidentes: {{$historia->antecedentes->accidentes}}</p>
+            <p>Antcedentes Hereditarios: {{$historia->antecedentes->accidentes}}</p>
 	        <p>Enfermedades Infancia: {{$historia->antecedentes->enfermedadesInfancia}}</p>
 	        <p>Alergias: {{$historia->antecedentes->alergias}}</p>
         	<p>Inmunización: {{$historia->antecedentes->inmunizacion}}</p>
 
     </section>
-
     <section id="Fisiología">
     <h1> Fisiología</h1>
         <p>Lactancia: {{$historia->fisiologica->lactancia}}</p>

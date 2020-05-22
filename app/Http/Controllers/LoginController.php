@@ -40,6 +40,7 @@ class LoginController extends Controller
 
         $response = $client->request('GET',"medical_history/retrieve_information/{$user}/{$passw}",['headers' => ['authentication' => $jwt]]);
 
+
         $response =json_decode($response->getBody());
         $historia = (json_decode($response->data))->data;
         $historia = json_encode($historia);
@@ -56,8 +57,8 @@ class LoginController extends Controller
         $request->session()->put('usuario',"{$usuario}");
 
         return redirect()->route('inicio');
-        } catch (BadResponseException  $e) {
-            return redirect()->route('cerrar');
+        } catch (\Exception  $e) {
+            return back()->with('Error', 'Usuario o contraseña incorrecta');
         }
     	
 

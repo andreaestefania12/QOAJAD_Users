@@ -3,11 +3,11 @@
 @section('content')
 	<div id="boxCrear">
 	<div id="title">
-		Seleccione la cita que desea eliminar
+		Seleccione la cita que desea editar
 	</div>
 	<div id="content">
 		@foreach ($lista as $list)
-		<a href="{{ route('borrarConfirma',$list->id) }}">
+		<a href="{{ route('modificar',$list->id) }}">
 			<div class="boxCitas">
 				<div> Fecha: {{ $list->date }}</div>
 				<div> IPS: {{ $list->healthProviderInstitute }}</div>

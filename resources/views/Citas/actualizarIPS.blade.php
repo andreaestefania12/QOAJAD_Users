@@ -9,7 +9,7 @@
 		<div id="content">
 			   
 			@foreach ($ipslist as $ips)
-				<a href="{{ route('ipsCita',$ips->name) }}">
+				<a href="{{ route('actualizarESP',$ips->name) }}">
 					<div class="boxIPS">
 						<div> Nombre: {{ $ips->name }}</div>
 						<div> Dirección: {{ $ips->streetAddress }}</div>
