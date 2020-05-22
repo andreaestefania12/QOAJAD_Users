@@ -69,7 +69,6 @@ class CitasController extends Controller
             'headers' => ['authentication' => $jwt , 'Content-Type' => 'application/json']
         ]); 
         $response = $client->request('POST','',['body' => $json]); 
-       
     }
 
 
@@ -83,6 +82,7 @@ class CitasController extends Controller
         $response = $client->request('GET',"/appointment/all_user_appointments/{$userDocument}",['headers' => ['authentication' => $jwt]]);
               
         $lista=json_decode($response->getBody()); 
+        // dd($lista);
     	return view('Citas.verCita',compact('lista'));
     }
 
