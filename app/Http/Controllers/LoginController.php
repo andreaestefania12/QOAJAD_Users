@@ -7,7 +7,7 @@ use GuzzleHttp\Client;
 use App\Http\Controllers\setcookie;
 use Guzzle\Http\Exception\ClientErrorResponseException;
 use Cookie;
-
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LoginController extends Controller
 {
@@ -23,6 +23,7 @@ class LoginController extends Controller
         $cookie = Cookie::forget('authentication');
         return view('login');   
     }
+
     public function index(Request $request)
     {
         try {
@@ -58,7 +59,8 @@ class LoginController extends Controller
 
         return redirect()->route('inicio');
         } catch (\Exception  $e) {
-            return back()->with('Error', 'Usuario o contraseña incorrecta');
+            Alert::error('Usuario o contraseña incorrecta','Error');
+            return back();
         }
     	
 

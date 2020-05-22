@@ -9,6 +9,7 @@ use GuzzleHttp\Exception\BadResponseException;
 use GuzzleHttp\Client;
 use Cookie;
 
+use RealRashid\SweetAlert\Facades\Alert;
 class RegistroController extends Controller
 {
     public function index()
@@ -21,7 +22,7 @@ class RegistroController extends Controller
     	$newUser = [ 'username' => $request->input('usuario'),'document' => $request->input('documento'), 'password' =>$request->input('passw')];
     	$json = json_encode($newUser);
     	$client = new Client([
-            'base_uri' => 'http://91.134.137.144:9090/user/create',
+            'base_uri' => 'http://91.134.137.144:9092/user/create',
             'headers' => ['Content-Type' => 'application/json']
         ]); 
         

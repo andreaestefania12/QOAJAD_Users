@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Cookie;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CitasController extends Controller
 {
@@ -108,15 +109,19 @@ class CitasController extends Controller
         $json = json_encode($appointment);
          
         $client = new Client([
-            'base_uri' => 'http://91.134.137.144:9090/appointment/create',
+            'base_uri' => 'http://91.134.137.144:9092/appointment/create',
             'headers' => ['authentication' => $jwt , 'Content-Type' => 'application/json']
         ]); 
 
         $response = $client->request('POST','',['body' => $json]);
 
-        return back()->with('success', 'Cita creada correctamente');
+        Alert::success('Cita creada correctamente','Correcto');
+            return redirect()->route('citasIndex');
+
         } catch (\Exception $e) {
-            return back()->with('Error', 'Hubo un error al crear la cita ');
+            
+            Alert::error('Hubo un error al crear la cita, intente más tarde','Error');
+            return redirect()->route('citasIndex');
         }
     }
 
@@ -135,15 +140,24 @@ class CitasController extends Controller
     }
     public function borrarConfirma($id)
     {
-        $client = (new ApiController())->getClient();
-        $jwt =  (new ApiController())->getCookie();
+        try {
+            $client = (new ApiController())->getClient();
+            $jwt =  (new ApiController())->getCookie();
 
-        $response = $client->request('delete',"appointment/delete/{$id}",['headers' => ['authentication' => $jwt]]);
-        $userDocument = ((new UsuarioController())->getUsuario())->DNI;
-        $response = $client->request('GET',"/appointment/all_user_appointments/{$userDocument}",['headers' => ['authentication' => $jwt]]);
-        $lista=json_decode($response->getBody()); 
+            $response = $client->request('delete',"appointment/delete/{$id}",['headers' => ['authentication' => $jwt]]);
+            $userDocument = ((new UsuarioController())->getUsuario())->DNI;
+            $response = $client->request('GET',"/appointment/all_user_appointments/{$userDocument}",['headers' => ['authentication' => $jwt]]);
+            $lista=json_decode($response->getBody()); 
+            
+            Alert::success('Cita borrada correctamente','Correcto');
+            return redirect()->route('borrarCita');
 
-        return redirect()->route('borrarCita');
+        } catch (\Exception $e) {
+            
+            Alert::error('Hubo un error al borrar la cita, intente más tarde','Error');
+            return redirect()->route('citasIndex');
+        }
+        
     }
 
 /*EDITAR CITA*/
@@ -197,15 +211,19 @@ class CitasController extends Controller
         $json = json_encode($appointment);
          
         $client = new Client([
-            'base_uri' => 'http://91.134.137.144:9090/appointment/update',
+            'base_uri' => 'http://91.134.137.144:9092/appointment/update',
             'headers' => ['authentication' => $jwt , 'Content-Type' => 'application/json']
         ]); 
 
         $response = $client->request('put','',['body' => $json]);
-        dd(json_decode($response->getBody()));
-        return back()->with('success', 'Cita actualizada correctamente');
+
+        Alert::success('Cita actualizada correctamente','Correcto');
+            return redirect()->route('citasIndex');
+
         } catch (\Exception $e) {
-            return back()->with('Error', 'Hubo un error al actualizar la cita ');
+            
+            Alert::error('Hubo un error al actualizar la cita, intente más tarde','Error');
+            return redirect()->route('citasIndex');
         }
     }
 

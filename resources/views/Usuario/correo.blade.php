@@ -13,7 +13,7 @@
 				
 				<h1>Correo actual : {{$user->username}}</h1>
 				<h1>Ingrese el nuevo correo: 
-				<input type="email" name="email" id="email" placeholder="Correo electrónico" required></h1>
+				<input type="email" name="username" id="email" placeholder="Correo electrónico" required></h1>
 				<input type="submit" name="enviar" value="Confirmar"/>
 
 			</section>

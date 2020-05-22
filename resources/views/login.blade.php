@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
 
     <!-- Main CSS-->
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
@@ -20,12 +21,7 @@
 </head>
 
 <body>
-@if ($message = Session::get('Error'))
-<div class="alert alert-danger alert-block">
-    <button type="button" class="close" data-dismiss="alert">×</button> 
-        <strong>{{ $message }}</strong>
-</div>
-@endif
+    @include('sweetalert::alert')
     <div class="page-wrapper p-t-180 p-b-100 font-robo">
         <div class="wrapper wrapper--w960">
             <div class="card card-2">

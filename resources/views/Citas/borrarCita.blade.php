@@ -7,7 +7,7 @@
 	</div>
 	<div id="content">
 		@foreach ($lista as $list)
-		<a href="{{ route('borrarConfirma',$list->id) }}">
+		<a href="{{ route('borrarConfirma',$list->id) }} ">
 			<div class="boxCitas">
 				<div> Fecha: {{ $list->date }}</div>
 				<div> IPS: {{ $list->healthProviderInstitute }}</div>
