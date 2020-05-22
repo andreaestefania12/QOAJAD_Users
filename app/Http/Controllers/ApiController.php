@@ -11,7 +11,7 @@ class ApiController extends Controller
     public function getClient()
     {
         $client = new Client([
-            'base_uri' => 'http://91.134.137.144:9090/'
+            'base_uri' => 'http://91.134.137.144:9092/'
         ]);
 
         return $client;
